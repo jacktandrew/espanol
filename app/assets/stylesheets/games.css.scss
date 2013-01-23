@@ -1,3 +1,25 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.completed, .completed:hover { opacity: 0.3; color: #AAA; border-color: green; }
+.selected, .selected:hover { border-color: yellow; }
+.wrong, .wrong:hover { border-color: red; }
+.completed, .selected, .wrong { -webkit-transition: all .1s ease-out; }
+
+table td { text-align: center; padding: 0 15px; }
+.edit, .play { border: 1px solid gray; padding: 5px; display: block; border-radius: 5px; }
+
+
+.you_won {
+  display: none; position: absolute;
+  margin-top: 200px 0 0 -320px; left: 50%;
+  height: 300px; width: 600px;
+  border: 20px solid green;
+  background: white;
+
+  h1, h2 { margin: 80px 0 0; text-align: center; }
+}    
+    
+    

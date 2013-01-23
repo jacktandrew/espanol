@@ -1,6 +1,5 @@
 Espanol::Application.routes.draw do
   resources :games
-
   resources :cards
 
   # The priority is based upon order of creation:
@@ -13,6 +12,8 @@ Espanol::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  
+    match 'games/:id/play' => 'games#play', :as => :play_game
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -53,6 +54,8 @@ Espanol::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  
+  root :to => 'games#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,13 @@
+<h1>Play The Game</h1>
+<% @chosen.shuffle.each do |ch| %>
+  <% if ch[:es] %>
+    <%= content_tag(:div, content_tag(:h3, ch[:es]), :class => 'card', :data => {:pairing => ch[:id]}) %>
+  <% else %>
+    <%= content_tag(:div, image_tag(ch[:pic]), :class => 'card', :data => {:pairing => ch[:id]}) %>
+  <% end %>
+<% end %>
+
+<div class="you_won">
+  <h1>Level Complete</h1>
+  <h2>You had <span class="errors"></span> errors</h2>
+</div>

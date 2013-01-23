@@ -1,6 +1,4 @@
 class CardsController < ApplicationController
-  # GET /cards
-  # GET /cards.json
   def index
     @cards = Card.all
 
@@ -10,8 +8,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # GET /cards/1
-  # GET /cards/1.json
   def show
     @card = Card.find(params[:id])
 
@@ -21,8 +17,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # GET /cards/new
-  # GET /cards/new.json
   def new
     @card = Card.new
 
@@ -32,13 +26,10 @@ class CardsController < ApplicationController
     end
   end
 
-  # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
   end
 
-  # POST /cards
-  # POST /cards.json
   def create
     @card = Card.new(params[:card])
 
@@ -53,8 +44,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # PUT /cards/1
-  # PUT /cards/1.json
   def update
     @card = Card.find(params[:id])
 
@@ -69,8 +58,6 @@ class CardsController < ApplicationController
     end
   end
 
-  # DELETE /cards/1
-  # DELETE /cards/1.json
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
