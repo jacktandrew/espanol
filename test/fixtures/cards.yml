@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  es: MyString
+  en: MyString
+  pic: MyString
+  category: MyString
+  level: 1
+
+two:
+  es: MyString
+  en: MyString
+  pic: MyString
+  category: MyString
+  level: 1

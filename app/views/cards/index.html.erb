@@ -1,0 +1,31 @@
+<h1>Listing cards</h1>
+
+<table>
+  <tr>
+    <th>Es</th>
+    <th>En</th>
+    <th>Pic</th>
+    <th>Category</th>
+    <th>Level</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cards.each do |card| %>
+  <tr>
+    <td><%= card.es %></td>
+    <td><%= card.en %></td>
+    <td><%= card.pic %></td>
+    <td><%= card.category %></td>
+    <td><%= card.level %></td>
+    <td><%= link_to 'Show', card %></td>
+    <td><%= link_to 'Edit', edit_card_path(card) %></td>
+    <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Card', new_card_path %>

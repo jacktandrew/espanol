@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Es:</b>
+  <%= @card.es %>
+</p>
+
+<p>
+  <b>En:</b>
+  <%= @card.en %>
+</p>
+
+<p>
+  <b>Pic:</b>
+  <%= @card.pic %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @card.category %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @card.level %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
