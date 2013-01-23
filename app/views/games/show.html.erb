@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @game.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @game.category %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @game.size %>
+</p>
+
+<p>
+  <b>Level:</b>
+  <%= @game.level %>
+</p>
+
+<p>
+  <b>Matchless:</b>
+  <%= @game.matchless %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

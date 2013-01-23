@@ -1,4 +1,6 @@
 Espanol::Application.routes.draw do
+  resources :games
+
   resources :cards
 
   # The priority is based upon order of creation:
