@@ -3,8 +3,8 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Size</th>
     <th>Category</th>
+    <th>Size</th>
     <th>Level</th>
     <th>Matchless</th>
     <th></th>
@@ -15,8 +15,8 @@
 <% @games.each do |game| %>
   <tr>
     <td><%= game.name %></td>
-    <td><%= game.size %></td>
     <td><%= game.category %></td>
+    <td><%= game.size %></td>    
     <td><%= game.level %></td>
     <td><%= game.matchless %></td>
     <td><%= link_to 'Play', play_game_path(game), class: 'play' %></td>

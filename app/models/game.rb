@@ -5,7 +5,7 @@ class Game < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :size, presence: true
   validates :matchless, presence: true
-  validates :level, numericality: {greater_than: 0, less_than: 4, message: 'must be from 1-3'}
+  validates :level, numericality: {greater_than: -1, less_than: 4, message: 'must be from 1-3'}
   
   private
 
@@ -14,7 +14,7 @@ class Game < ActiveRecord::Base
       self.category = 'none'
     end
     self.matchless ||= 0
-    self.level ||= 1
+    self.level ||= 0
   end  
 
 end

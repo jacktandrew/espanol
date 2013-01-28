@@ -1,17 +1,28 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @games }
-    end
   end
   
   def play
     @game = Game.find(params[:id])
     @chosen = []
-    cards = Card.where(level: @game.level).where(category: @game.category).slice(0, @game.size).shuffle
+    
+    if @game.level == 0
+      if @game.category == 'none'
+        cards = Card.all
+      else
+        cards = Card.where(category: @game.category)
+      end
+    else
+      if @game.category == 'none'
+        cards = Card.where(level: @game.level)
+      else
+        cards = Card.where(level: @game.level).where(category: @game.category)
+      end
+    end
+    
+    cards = cards.shuffle.slice(0, @game.size)
+
     cards.each do |card|
       @chosen << {es: card[:es], id: card[:id]}
       @chosen << {pic: card[:pic], id: card[:id]}
@@ -20,20 +31,10 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @game }
-    end
   end
 
   def new
     @game = Game.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @game }
-    end
   end
 
   def edit
@@ -43,38 +44,24 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(params[:game])
 
-    respond_to do |format|
-      if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
-        format.json { render json: @game, status: :created, location: @game }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.save
+      redirect_to @game, notice: 'Game was successfully created.'
+    else
+      render action: "new"
     end
   end
 
   def update
     @game = Game.find(params[:id])
-
-    respond_to do |format|
-      if @game.update_attributes(params[:game])
-        format.html { redirect_to @game, notice: 'Game was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @game.errors, status: :unprocessable_entity }
-      end
+    if @game.update_attributes(params[:game])
+      redirect_to @game, notice: 'Game was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
-
-    respond_to do |format|
-      format.html { redirect_to games_url }
-      format.json { head :no_content }
-    end
   end
 end
