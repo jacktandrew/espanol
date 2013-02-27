@@ -16,7 +16,7 @@
   <tr>
     <td><%= card.es %></td>
     <td><%= card.en %></td>
-    <td><%= card.pic %></td>
+    <td><%= image_tag card.image.url(:thumb) %></td>
     <td><%= card.category %></td>
     <td><%= card.level %></td>
     <td><%= link_to 'Show', card %></td>

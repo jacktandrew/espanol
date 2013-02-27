@@ -13,9 +13,12 @@ table td { text-align: center; padding: 0 15px; }
 
 
 .you_won {
-  display: none; position: absolute;
-  margin-top: 200px 0 0 -320px; left: 50%;
-  height: 300px; width: 600px;
+  display: none; 
+  position: absolute;
+  margin: 200px 0 0 -320px; 
+	left: 50%;
+  height: 300px; 
+	width: 600px;
   border: 20px solid green;
   background: white;
 
