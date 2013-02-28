@@ -1,0 +1,16 @@
+<div class="images" id="<%= card.es %>">
+  <div class="front">
+    <%= link_to card, class: 'card-link' do %>
+      <%= image_tag card.image.url(:square) %>
+    <% end %>
+  </div>
+
+  <div class="back">
+    <span class="card-name"><%= card.name %></span>
+    <div class="actions">
+      <%= link_to 'Show', card %>
+      <%= link_to 'Edit', edit_card_path(card) %>
+      <%= link_to 'Delete', card, confirm: 'Are you sure you want to delete a card?', method: :delete, class: 'destroy' %>
+    </div>
+  </div>
+</div>

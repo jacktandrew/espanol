@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Pic:</b>
-  <%= @card.pic %>
+  <%= image_tag card.image.url(:medium) %>
+  <!-- <%= render 'image' %> -->
 </p>
 
 <p>
@@ -23,10 +23,6 @@
 <p>
   <b>Level:</b>
   <%= @card.level %>
-</p>
-
-<p>
-  <%= image_tag @card.pic %>
 </p>
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
